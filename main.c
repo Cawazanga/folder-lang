@@ -116,6 +116,14 @@ void wwv(int modenum, const char *csev, int *intvarspace)
             break;
     }
 }
+/*
+void wwf(int modenum, const char *fn, const char *ivalue) {
+    char buf_namefile[48] = {0};
+    char buf_str[2048] = {0};
+    if (sscanf(csev, "%47s %7s", buf_namefile, buf_str) != 2) {
+        return;
+    }
+} */
 void initintarr(struct intarr *arr) {
 
 }
@@ -134,9 +142,14 @@ int main(void)
         char iva[1024];
         bool ivb[1024];
 
-        if (scanf("%255[^\n]", buf) == 1)
-            scanf("%*c");
+        int recs = scanf("%255[^\n]", buf);
 
+        if (recs == 1)
+            scanf("%*c");
+        else if (recs == 0) {
+            scanf("%*c");
+            buf[0] = '\0';
+        }
         short reta = check(buf, '<', csev, '>');
         wwv(reta, csev, iv);
         if (buf[0] == 'e') {
