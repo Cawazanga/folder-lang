@@ -13,6 +13,7 @@ short check(const char *buf, const char from, char *var, const char doas)
         if (start == false && buf[i] == from) {
             prestartsyb = buf[i - 1];
             preprestartsyb = buf[i - 2];
+            printf("%c", preprestartsyb);
             start = true;
             continue;
         }
@@ -28,6 +29,23 @@ short check(const char *buf, const char from, char *var, const char doas)
     }
 
     var[j] = '\0';
+
+    switch (preprestartsyb) {
+        case 'v':
+            switch (prestartsyb) {
+                case '=':
+                    return 14;
+                    break;
+                case '+':
+                    return 15;
+                    break;
+                case '-':
+                    return 16;
+                    break;
+            }
+            break;
+    }
+
     switch(prestartsyb) {
         case 'a':
             return 1;
@@ -55,6 +73,7 @@ short check(const char *buf, const char from, char *var, const char doas)
         default:
             return 0;
     }
+
 }
 struct chararr {
     int n;
@@ -113,6 +132,15 @@ void wwv(int modenum, const char *csev, int *intvarspace)
             break;
         case 6:
             intvarspace[varnum] = intvarspace[varnum] - valuenum;
+            break;
+        case 14:
+            intvarspace[varnum] = intvarspace[valuenum];
+            break;
+        case 15:
+            intvarspace[varnum] = intvarspace[varnum] + intvarspace[valuenum];
+            break;
+        case 16:
+            intvarspace[varnum] = intvarspace[varnum] - intvarspace[valuenum];
             break;
     }
 }
