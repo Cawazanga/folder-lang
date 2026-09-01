@@ -7,6 +7,8 @@ int runoldbuf(const char *buf, int *intvarspace);
 void wwv(int modenum, const char *csev, int *intvarspace);
 void wwdq(int modenum, const char *csev, int *intvarspace);
 void wwkw(const char *keyword);
+int cycle(char numsbuf, short count);
+void wwc(const char *csev);
 
 int iv[1024];
 

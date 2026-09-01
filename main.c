@@ -66,7 +66,10 @@ int main(void) {
                 return atoi(csev);
 
             }
-
+            if (buf[0] == 'c') {
+                check(buf, '<', csev, '>');
+                wwc(csev);
+            }
             else if (buf[0] == ':') {
                 char reta = check(buf, ':', csev, '\0');
                 wwkw(csev);

@@ -8,4 +8,6 @@ void wwkw(const char *keyword) {
         runoldbuf(sbuf1, iv);
     if (strcmp(keyword, "runsbuf2") == 0)
         runoldbuf(sbuf2, iv);
+    else
+        puts("Error:not found keyword");
 }
