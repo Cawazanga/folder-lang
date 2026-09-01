@@ -56,7 +56,7 @@ int main(void) {
             if (buf[0] == '{' || buf[0] == '1')
                 snprintf(sbuf1, sizeof sbuf1, "%s", csev);
             if (buf[0] == '2')
-                snprintf(sbuf1, sizeof sbuf2, "%s", csev);
+                snprintf(sbuf2, sizeof sbuf2, "%s", csev);
         } else {
             short reta = check(buf, '<', csev, '>');
             wwv(reta, csev, iv);
