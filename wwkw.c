@@ -1,13 +1,15 @@
 #include "func.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 void wwkw(const char *keyword) {
     if (strcmp(keyword, "sbuflist") == 0)
-        printf("1: %s\n2: %s\n", sbuf1, sbuf2);
-    if (strcmp(keyword, "runsbuf1") == 0)
-        runoldbuf(sbuf1, iv);
-    if (strcmp(keyword, "runsbuf2") == 0)
-        runoldbuf(sbuf2, iv);
+        puts("in proccesing\n");
+    if (strcmp(keyword, "runsbuf") == 0)
+        runoldbuf(sbuf[atoi(fastobjnum)], iv);
+    if (strcmp(keyword, "newsbuf") == 0)
+        //newsbuf();
+        puts("in proccesing\n");
     else
         puts("Error:not found keyword");
 }

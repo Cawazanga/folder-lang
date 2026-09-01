@@ -9,9 +9,10 @@ void wwdq(int modenum, const char *csev, int *intvarspace);
 void wwkw(const char *keyword);
 int cycle(char numsbuf, short count);
 void wwc(const char *csev);
+// void newsbuf(void);
+
+char fastobjnum[3];
 
 int iv[1024];
-
-char sbuf1[1024];
-char sbuf2[1024];
+char sbuf[96][1024];
 #endif

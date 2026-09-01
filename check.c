@@ -9,6 +9,8 @@ short check(const char *buf, const char from, char *var, const char doas)
     int j = 0;
     char prestartsyb;
     char preprestartsyb;
+    char afterchar;
+
     for (int i = 0; buf[i] != '\0'; i++) {
         if (start == false && buf[i] == from) {
             if (i > 0)
@@ -21,6 +23,7 @@ short check(const char *buf, const char from, char *var, const char doas)
         }
 
         if (start == true && buf[i] == doas) {
+
             break;
         }
 

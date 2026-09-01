@@ -5,10 +5,7 @@
 #include <string.h>
 void wwdq(int modenum, const char *csev, int *intvarspace) {
     char mininumbuf[96];
-    if (strcmp(csev, "savebufs") == 0) {
-        printf("%s\n", sbuf1);
-        printf("%s\n", sbuf2);
-    }
+
     if (csev[0] == '(') {
         check(csev, '(', mininumbuf, ')');
         switch (modenum) {

@@ -50,13 +50,11 @@ int main(void) {
             scanf("%*c");
             buf[0] = '\0';
         }
-        if (buf[0] == '{' || buf[1] == '{') {
-            puts("db::");
+        if (buf[0] == '{') {
+
             char reta = check(buf, '{', csev, '}');
-            if (buf[0] == '{' || buf[0] == '1')
-                snprintf(sbuf1, sizeof sbuf1, "%s", csev);
-            if (buf[0] == '2')
-                snprintf(sbuf2, sizeof sbuf2, "%s", csev);
+            char retd = check(buf, '}', fastobjnum, '\0');
+            snprintf(sbuf[atoi(fastobjnum)], sizeof sbuf[atoi(fastobjnum)], "%s", csev);
         } else {
             short reta = check(buf, '<', csev, '>');
             wwv(reta, csev, iv);
