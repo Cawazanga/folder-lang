@@ -2,79 +2,9 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
+#include "func.h"
 
-short check(const char *buf, const char from, char *var, const char doas)
-{
-    bool start = false;
-    int j = 0;
-    char prestartsyb;
-    char preprestartsyb;
-    for (int i = 0; buf[i] != '\0'; i++) {
-        if (start == false && buf[i] == from) {
-            prestartsyb = buf[i - 1];
-            preprestartsyb = buf[i - 2];
-            printf("%c", preprestartsyb);
-            start = true;
-            continue;
-        }
 
-        if (start == true && buf[i] == doas) {
-            break;
-        }
-
-        if (start == true) {
-            var[j] = buf[i];
-            j++;
-        }
-    }
-
-    var[j] = '\0';
-
-    switch (preprestartsyb) {
-        case 'v':
-            switch (prestartsyb) {
-                case '=':
-                    return 14;
-                    break;
-                case '+':
-                    return 15;
-                    break;
-                case '-':
-                    return 16;
-                    break;
-            }
-            break;
-    }
-
-    switch(prestartsyb) {
-        case 'a':
-            return 1;
-            break;
-        case 'n':
-            return 2;
-            break;
-        case 'l':
-            return 3;
-            break;
-        case 'i':
-            return 1;
-            break;
-        case 's':
-            return 9;
-        case '=':
-            return 4;
-            break;
-        case '+':
-            return 5;
-            break;
-        case '-':
-            return 6;
-            break;
-        default:
-            return 0;
-    }
-
-}
 struct chararr {
     int n;
     char *arr;
@@ -83,67 +13,7 @@ struct intarr {
     int n;
     int *arr;
 };
-void wwdq(int modenum, const char *csev, int *intvarspace) {
-    char mininumbuf[9];
-    if (csev[0] == '(') {
-        check(csev, '(', mininumbuf, ')');
-        switch (modenum) {
-            case 1:
-                printf("%d\n", intvarspace[atoi(mininumbuf)]);
-                break;
-            case 2:
-                printf("%d", intvarspace[atoi(mininumbuf)]);
-                break;
-        }
-    }
-    else {
-        switch (modenum) {
-            case 1:
-                printf("%s", csev);
-                break;
-            case 2:
-                printf("%s\n", csev);
-                break;
-            case 3:
-                printf("%d", strlen(csev));
-                break;
-            default:
-                printf("%s\n", csev);
-        }
-    }
-}
-void wwv(int modenum, const char *csev, int *intvarspace)
-{
-    char varnumarr[3] = {0};
-    char valuenumarr[8] = {0};
-    int varnum;
-    int valuenum;
-    if (sscanf(csev, "%2s %7s", varnumarr, valuenumarr) != 2) {
-        return;
-    }
-    varnum = atoi(varnumarr);
-    valuenum = atoi(valuenumarr);
-    switch (modenum) {
-        case 4:
-            intvarspace[varnum] = valuenum;
-            break;
-        case 5:
-            intvarspace[varnum] = intvarspace[varnum] + valuenum;
-            break;
-        case 6:
-            intvarspace[varnum] = intvarspace[varnum] - valuenum;
-            break;
-        case 14:
-            intvarspace[varnum] = intvarspace[valuenum];
-            break;
-        case 15:
-            intvarspace[varnum] = intvarspace[varnum] + intvarspace[valuenum];
-            break;
-        case 16:
-            intvarspace[varnum] = intvarspace[varnum] - intvarspace[valuenum];
-            break;
-    }
-}
+
 /*
 void wwf(int modenum, const char *fn, const char *ivalue) {
     char buf_namefile[48] = {0};

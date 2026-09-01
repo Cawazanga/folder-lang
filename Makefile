@@ -1,7 +1,7 @@
 CC = gcc
 
 TARGET = interpret
-SRC = main.c
+SRC = main.c check.c wwv.c wwdq.c
 
 $(TARGET): $(SRC)
 	$(CC) $(SRC) -o $(TARGET)
