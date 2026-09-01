@@ -1,9 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "func.h"
 #include <string.h>
 void wwdq(int modenum, const char *csev, int *intvarspace) {
-    char mininumbuf[9];
+    char mininumbuf[96];
+    if (strcmp(csev, "savebufs") == 0) {
+        printf("%s\n", sbuf1);
+        printf("%s\n", sbuf2);
+    }
     if (csev[0] == '(') {
         check(csev, '(', mininumbuf, ')');
         switch (modenum) {
@@ -15,6 +20,7 @@ void wwdq(int modenum, const char *csev, int *intvarspace) {
                 break;
         }
     }
+
     else {
         switch (modenum) {
             case 1:

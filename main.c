@@ -28,12 +28,14 @@ void initintarr(struct intarr *arr) {
 void initchararr() {
 
 }
-int main(void)
-{
-    int iv[1024];
+int main(void) {
+
+
     FILE *ivf[256];
     iv[2] = 10;
+
     while (1) {
+        //runoldbuf(const char *buf, int *intvarspace)
         char buf[1024];
         char csev[48];
 
@@ -48,20 +50,32 @@ int main(void)
             scanf("%*c");
             buf[0] = '\0';
         }
-        short reta = check(buf, '<', csev, '>');
-        wwv(reta, csev, iv);
-        if (buf[0] == 'e') {
-            char reta = check(buf, '<', csev, '>');
-            return atoi(csev);
+        if (buf[0] == '{' || buf[1] == '{') {
+            puts("db::");
+            char reta = check(buf, '{', csev, '}');
+            if (buf[0] == '{' || buf[0] == '1')
+                snprintf(sbuf1, sizeof sbuf1, "%s", csev);
+            if (buf[0] == '2')
+                snprintf(sbuf1, sizeof sbuf2, "%s", csev);
+        } else {
+            short reta = check(buf, '<', csev, '>');
+            wwv(reta, csev, iv);
 
+            if (buf[0] == 'e') {
+                char reta = check(buf, '<', csev, '>');
+                return atoi(csev);
+
+            }
+
+            else if (buf[0] == ':') {
+                char reta = check(buf, ':', csev, '\0');
+                wwkw(csev);
+            }
+            else {
+                short reta = check(buf, '"', csev, '"');
+                wwdq(reta, csev, iv);
+            }
         }
-        else {
-            short reta = check(buf, '"', csev, '"');
-            wwdq(reta, csev, iv);
-
-        }
-
-        snprintf(oldbuf, sizeof oldbuf, "%s", buf);
     }
     return 1;
 }
