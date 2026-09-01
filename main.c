@@ -60,6 +60,8 @@ int main(void)
             wwdq(reta, csev, iv);
 
         }
+
+        snprintf(oldbuf, sizeof oldbuf, "%s", buf);
     }
     return 1;
 }
