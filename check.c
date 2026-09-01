@@ -10,8 +10,10 @@ short check(const char *buf, const char from, char *var, const char doas)
     char preprestartsyb;
     for (int i = 0; buf[i] != '\0'; i++) {
         if (start == false && buf[i] == from) {
-            prestartsyb = buf[i - 1];
-            preprestartsyb = buf[i - 2];
+            if (i > 0)
+                prestartsyb = buf[i - 1];
+            if (i > 1)
+                preprestartsyb = buf[i - 2];
             printf("%c", preprestartsyb);
             start = true;
             continue;
