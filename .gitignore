@@ -1,19 +1,19 @@
-# Объектные файлы
+# obj
 *.o
 
-# Исполняемые файлы
+# bin
 *.out
 *.exe
 a.out
 interpret
 
-# Папки сборки
+# finf
 build/
 bin/
 
 # macOS
 .DS_Store
 
-# Логи и временные файлы
+# logs and cache
 *.log
 *.tmp
