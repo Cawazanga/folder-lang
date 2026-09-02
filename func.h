@@ -9,6 +9,7 @@ void wwdq(int modenum, const char *csev, int *intvarspace);
 void wwkw(const char *keyword);
 int cycle(char numsbuf, short count);
 void wwc(const char *csev);
+void wwa(const char *buf, short cost);
 // void newsbuf(void);
 
 char fastobjnum[3];
