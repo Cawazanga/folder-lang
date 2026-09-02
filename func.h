@@ -15,4 +15,5 @@ char fastobjnum[3];
 
 int iv[1024];
 char sbuf[96][1024];
+char argsu[3][8];
 #endif
