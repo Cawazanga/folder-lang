@@ -42,7 +42,7 @@ int main(void) {
         char iva[1024];
         bool ivb[1024];
 
-        int recs = scanf("%255[^\n]", buf);
+        int recs = scanf("%1023[^\n]", buf);
 
         if (recs == 1)
             scanf("%*c");
