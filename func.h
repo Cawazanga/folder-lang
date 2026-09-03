@@ -10,12 +10,12 @@ void wwkw(const char *keyword);
 void cycle(char numsbuf, short count);
 void wwc(const char *csev);
 void wwa(const char *buf, short cost);
-void wwvif(int *intvarspace, char opcheck, short fvar, short svar, short numrbuf);
+void wwvif(int *intvarspace, char opcheck, short fvar, short svar, short numrbuf, short numrelsebuf);
 // void newsbuf(void);
 
 char fastobjnum[3];
 
 int iv[1024];
 char sbuf[96][1024];
-char argsu[4][8];
+char argsu[5][8];
 #endif

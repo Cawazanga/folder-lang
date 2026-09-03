@@ -27,7 +27,7 @@ void wwa(const char *buf, short cost) {
         snprintf(argsu[0], sizeof argsu[0], "%s", arg1);
         snprintf(argsu[1], sizeof argsu[1], "%s", arg2);
         snprintf(argsu[2], sizeof argsu[2], "%s", arg3);
-    } else if (cost >= 4) {
+    } else if (cost ==  4) {
         char arg1[8];
         char arg2[8];
         char arg3[8];
@@ -39,6 +39,21 @@ void wwa(const char *buf, short cost) {
         snprintf(argsu[1], sizeof argsu[1], "%s", arg2);
         snprintf(argsu[2], sizeof argsu[2], "%s", arg3);
         snprintf(argsu[3], sizeof argsu[3], "%s", arg4);
+    } else if (cost >= 5) {
+        char arg1[8];
+        char arg2[8];
+        char arg3[8];
+        char arg4[8];
+        char arg5[8];
+        if (sscanf(csev, "%7s %7s %7s %7s %7s", arg1, arg2, arg3, arg4, arg5) != 5) {
+            return;
+        }
+        snprintf(argsu[0], sizeof argsu[0], "%s", arg1);
+        snprintf(argsu[1], sizeof argsu[1], "%s", arg2);
+        snprintf(argsu[2], sizeof argsu[2], "%s", arg3);
+        snprintf(argsu[3], sizeof argsu[3], "%s", arg4);
+        snprintf(argsu[4], sizeof argsu[3], "%s", arg4);
+
     } else {
         puts("in proccesing\n");
     }

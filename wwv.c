@@ -34,27 +34,31 @@ void wwv(int modenum, const char *csev, int *intvarspace)
             break;
     }
 }
-void wwvif(int *intvarspace, char opcheck, short fvar, short svar, short numrbuf) {
+void wwvif(int *intvarspace, char opcheck, short fvar, short svar, short numrbuf, short numrelsebuf) {
     switch (opcheck) {
         case '=':
-            if (intvarspace[fvar] == intvarspace[svar]) {
+            if (intvarspace[fvar] == intvarspace[svar])
                 runcorbuf(sbuf[numrbuf], intvarspace);
-            }
+            else
+                runcorbuf(sbuf[numrelsebuf], intvarspace);
             break;
         case '!':
-            if (intvarspace[fvar] != intvarspace[svar]) {
+            if (intvarspace[fvar] != intvarspace[svar])
                 runcorbuf(sbuf[numrbuf], intvarspace);
-            }
+            else
+                runcorbuf(sbuf[numrelsebuf], intvarspace);
             break;
         case '<':
-            if (intvarspace[fvar] < intvarspace[svar]) {
+            if (intvarspace[fvar] < intvarspace[svar])
                 runcorbuf(sbuf[numrbuf], intvarspace);
-            }
+            else
+                runcorbuf(sbuf[numrelsebuf], intvarspace);
             break;
         case '>':
-            if (intvarspace[fvar] > intvarspace[svar]) {
+            if (intvarspace[fvar] > intvarspace[svar])
                 runcorbuf(sbuf[numrbuf], intvarspace);
-            }
+            else
+                runcorbuf(sbuf[numrelsebuf], intvarspace);
             break;
         default:
             puts("Invalid Operator");
