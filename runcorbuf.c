@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "func.h"
-int runoldbuf(const char *buf, int *intvarspace) {
+int runcorbuf(const char *buf, int *intvarspace) {
 
     char csev[48];
 
