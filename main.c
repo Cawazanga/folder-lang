@@ -52,7 +52,7 @@ int main(void) {
         }
         if (buf[0] == 'i' && buf[1] == 'f') {
             wwa(buf, 5); //
-            wwvif(iv, argsu[0][0], atoi(argsu[1]), atoi(argsu[2]), atoi(argsu[3]), atoi(argsu[4]));
+            wwvif(iv, argsu[0][0], atoi(argsu[1]), atoi(argsu[2]), atoi(argsu[3]), atoi(argsu[4])); //
         }
         if (buf[0] == '{') {
 
