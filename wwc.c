@@ -7,5 +7,5 @@ void wwc(const char *csev) {
     if (sscanf(csev, "%1s %7s", fa, ta) != 2) {
         return;
     }
-    cycle(fa[0], atoi(ta));
+    cycle(fa, atoi(ta));
 }
