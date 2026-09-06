@@ -18,7 +18,7 @@ struct intarr {
 void wwf(int modenum, const char *fn, const char *ivalue) {
     char buf_namefile[48] = {0};
     char buf_str[2048] = {0};
-    if (sscanf(csev, "%47s %7s", buf_namefile, buf_str) != 2) {
+    if (sscanf(csev , "%47s %7s", buf_namefile, buf_str) != 2) {
         return;
     }
 } */
