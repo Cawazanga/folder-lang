@@ -5,14 +5,6 @@
 #include "func.h"
 
 
-struct chararr {
-    int n;
-    char *arr;
-};
-struct intarr {
-    int n;
-    int *arr;
-};
 
 /*
 void wwf(int modenum, const char *fn, const char *ivalue) {
@@ -22,12 +14,7 @@ void wwf(int modenum, const char *fn, const char *ivalue) {
         return;
     }
 } */
-void initintarr(struct intarr *arr) {
 
-}
-void initchararr() {
-
-}
 int main(void) {
 
 
