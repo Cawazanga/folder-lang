@@ -9,25 +9,27 @@ int runcorbuf(const char *buf, int *intvarspace) {
 
     if (buf[0] == 'i' && buf[1] == 'f') {
         wwa(buf, 5);
-        wwvif(iv, argsu[0][0], atoi(argsu[1]), atoi(argsu[2]), atoi(argsu[3]), atoi(argsu[4])); //
+        wwvif(iv, argsu[0][0], atoi(argsu[1]), atoi(argsu[2]), atoi(argsu[3]), atoi(argsu[4]));
     }
     if (buf[0] == '{') {
 
         char reta = check(buf, '{', csev, '}');
         char retd = check(buf, '}', fastobjnum, '\0');
         snprintf(sbuf[atoi(fastobjnum)], sizeof sbuf[atoi(fastobjnum)], "%s", csev);
+        andend(buf, iv);
     } else {
         short reta = check(buf, '<', csev, '>');
         wwv(reta, csev, iv);
-
+        andend(buf, iv);
         if (buf[0] == 'e') {
             char reta = check(buf, '<', csev, '>');
             return atoi(csev);
-
+            andend(buf, iv);
         }
         if (buf[0] == 'c') {
             check(buf, '<', csev, '>');
             wwc(csev);
+            andend(buf, iv);
         }
         else if (buf[0] == ':') {
             char reta = check(buf, ':', csev, '\0');
@@ -36,7 +38,7 @@ int runcorbuf(const char *buf, int *intvarspace) {
         else {
             short reta = check(buf, '"', csev, '"');
             wwdq(reta, csev, iv);
+            andend(buf, iv);
         }
     }
-
 }
