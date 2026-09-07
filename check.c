@@ -17,7 +17,6 @@ short check(const char *buf, const char from, char *var, const char doas)
                 prestartsyb = buf[i - 1];
             if (i > 1)
                 preprestartsyb = buf[i - 2];
-            printf("%c", preprestartsyb);
             start = true;
             continue;
         }
